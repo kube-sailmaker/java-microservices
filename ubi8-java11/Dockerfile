@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 LABEL base=ubi8 engine=jvm version=java11 timezone=UTC port=8080 dir=/opt/app user=app
 
-RUN microdnf install java-11-openjdk-headless openssl hostname bash curl tzdata shadow-utils && microdnf clean all
+RUN microdnf install java-11-openjdk-headless openssl hostname bash curl tzdata shadow-utils tar gzip && microdnf clean all
 ENV JAVA_HOME=/usr/lib/jvm/jre-11
 
 ENV TZ=UTC
